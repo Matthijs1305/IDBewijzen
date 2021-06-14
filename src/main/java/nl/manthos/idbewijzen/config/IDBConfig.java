@@ -7,6 +7,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IDBConfig {
 
@@ -30,6 +32,7 @@ public class IDBConfig {
     }
 
     private void setup() {
+        this.config.options().copyDefaults(true);
         this.config.addDefault("last", 0);
         this.save();
     }
@@ -41,6 +44,7 @@ public class IDBConfig {
         this.config.set(header + ".stad", city);
         this.config.set(header + ".geslacht", sex);
         this.config.set(header + ".nummer", newValue);
+        this.config.set("last", newValue);
         this.save();
     }
 
@@ -69,6 +73,11 @@ public class IDBConfig {
         int old = this.config.getInt("last");
         int newValue = old + 1;
         return newValue;
+    }
+
+
+    public void reload() {
+        this.save();
     }
 
     private void save() {

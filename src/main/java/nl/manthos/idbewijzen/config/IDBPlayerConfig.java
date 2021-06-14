@@ -61,6 +61,10 @@ public class IDBPlayerConfig {
         return this.config.contains(header);
     }
 
+    public void reload() {
+        this.save();
+    }
+
     private void save() {
         try {
             config.save(file);

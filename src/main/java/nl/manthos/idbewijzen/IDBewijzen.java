@@ -22,6 +22,7 @@ public final class IDBewijzen extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+
         this.settingsConfig = new IDBSettingsConfig(this);
         this.idbConfig = new IDBConfig(this);
         this.idbPlayerConfig = new IDBPlayerConfig(this);
