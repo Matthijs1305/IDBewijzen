@@ -1,0 +1,9 @@
+name: IDBewijzen
+version: @version@
+main: nl.manthos.idbewijzen.IDBewijzen
+authors: [ Manthos ]
+website: manthos.nl
+
+commands:
+  idbewijs:
+    aliases: [idb]
